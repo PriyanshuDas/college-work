@@ -1,0 +1,63 @@
+#include <bits/stdc++.h>
+
+#define ll long long int
+#define sf scanf
+#define pf printf
+#define mp make_pair
+#define pb push_back
+#define loop(i, l, r) for(auto i = l; i != r; i++)
+#define ins insert
+
+using namespace std;
+
+int main()
+{
+	ll ans = 0;
+	int n;
+	cin >> n;
+	vector<int> x, y;
+	vector <pair <int, int> > c_x, c_y;
+	loop(i, 0, n)
+	{
+		int xi, yi;
+		sf("%d%d", &xi, &yi);
+		x.pb(xi);	y.pb(yi);
+		c_x.pb(mp(xi, yi));		c_y.pb(mp(yi, xi));
+	}
+	sort(c_x.begin(), c_x.end());
+	sort(c_y.begin(), c_y.end());
+	
+	int ct_x = 1, ct_y = 1, ident = 1;
+	for(int i = 1; i < n; i++)
+	{
+		if(c_x[i].first == c_x[i-1].first)
+			ct_x++;
+		if(c_y[i].first == c_y[i-1].first)
+			ct_y++;
+		if(c_x[i].first == c_x[i-1].first && c_x[i].second == c_x[i-1].second)
+		{
+			ident++;
+		}
+		else
+		{
+			ans -= ident*(ident-1);
+			ident = 1;
+		}
+		if(c_x[i].first != c_x[i-1].first)
+		{
+			ans += (ct_x*(ct_x - 1));
+			ct_x = 1;
+		}
+		if(c_y[i].first != c_y[i-1].first)
+		{
+			ans += (ct_y*(ct_y - 1));
+			ct_y = 1;
+		}
+	}
+	ans += (ct_x*(ct_x - 1));
+	ans += (ct_y*(ct_y - 1));
+	ans -= ident*(ident - 1);
+	ans /= 2;
+	cout << ans;
+	return 0;
+}
