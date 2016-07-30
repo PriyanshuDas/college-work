@@ -1,0 +1,17 @@
+CodeChef April Challenge 2016
+
+Problem Name : Amazing Experiment (AMAEXPER)
+
+Problem : - 	Strategic val of node u : max(dist(u, v)) For all v in tree
+		Strategic val of subtree u : min(stra(v)) for all v in subtree(u)
+		Print Strategic value of each subtree
+
+Observations :-
+	-> Centroid Decomposition
+	-> For every node, find and store distance to its ancestors in C-Tree
+	-> For every node u, go to all it's ancestors x
+	-> Find max(dist(u, x) + val[x][0] (if val[x] != dist(u,x) (else val[x][1])). Store this value.
+	-> Do DFS of tree, for every node store the min val of their descendants
+
+
+		Voila, This is the Answer!

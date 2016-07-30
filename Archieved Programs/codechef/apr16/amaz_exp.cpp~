@@ -1,0 +1,223 @@
+  //============== Centroid Decomposition Question 2 ============//
+ //=========== http://www.spoj.com/problems/QTREE5/ ============//
+//=============== Coded By Priyanshu Das ======================//
+
+#include <bits/stdc++.h>
+
+#define pf printf
+#define sf scanf
+#define ll long long int
+#define mp make_pair
+#define pb push_back
+#define ins insert
+#define loop(i, l, r) for(int i = l; i < r; i++)
+#define max_n 100001
+#define max_lg 20
+#define inf_val 9999999
+
+using namespace std;
+
+int lvl[max_n+1], par[max_n+1];
+set<int> conn[max_n+1];
+int siz[max_n+1];
+vector<int> Primes;
+bool not_prime[max_n+2];
+ll n, pairs;
+int t_dist[max_lg][max_n+1];
+
+ //---------------------- Pre Processing -------------------------
+
+int visited[max_n+1];
+ll d_root[max_n+1];
+map<int, ll> distan[max_n+1];
+
+void dist_dfs(int node, ll curr_d)
+{
+    visited[node] = 1;
+    d_root[node] = curr_d;
+    for(auto it = conn[node].begin(); it != conn[node].end(); it++)
+    {
+        if(!visited[*it])
+            dist_dfs(*it, curr_d + distan[u].find(v)->second);
+    }
+}
+
+void set_level(int n)
+{
+	DP[0][n] = n;
+	dist_dfs(1, 0);
+	loop(i,0,conn[n].size())
+	{
+		if(DP[1][conn[n][i]] == n)
+			continue;
+		lvl[conn[n][i]] = lvl[n] + 1;
+		DP[1][conn[n][i]] = n;
+	}
+}
+
+void pre_process()	// find 2^kth parent of all nodes for all possible int ks
+{
+	DP[1][1] = 0;
+	lvl[1] = 0;
+	set_level(1);
+	loop(i, 2, max_lg+1)
+		loop(j, 1, max_n+1)
+			DP[i][j] = DP[i-1][DP[i-1][j]];
+}
+
+int lca (int a, int b)			// Lowest Common Ancestor, lvl(a) < lvl(b)
+{
+	if(lvl[a] > lvl[b])
+		swap(a, b);
+	int diff = lvl[b] - lvl[a];
+	for(int i = 1; i <= max_lg; i++)	//bringing b to same level as a
+		if(diff&(1<<i-1))
+			b = DP[i][b];
+	if(a==b)
+		return a;
+	for(int i = max_lg; i >= 0; i--)	//If the 2^kth ancestor is same, then lca < 2^kth ancestor.
+	{
+		if(DP[i][a] != DP[i][b])
+		{
+			a = DP[i][a];
+			b = DP[i][b];
+		}
+	}
+	return DP[1][a];
+}
+
+int dist(int a, int b)
+{
+	return d_root[a] + d_root[b] - 2*d_root[lca(a,b)];
+}
+
+
+ //============================================================//
+//-------------------------Decomposition----------------------//
+
+int no_nodes;
+
+int find_size(int node, int par)
+{
+	siz[node] = 1;
+	no_nodes++;
+	for(auto it = conn[node].begin(); it != conn[node].end(); it++)
+		if(*it != par)
+		{
+			siz[node] += find_size(*it, node);
+		}
+	return siz[node];
+}
+
+int find_centr(int node, int par)
+{
+	for(auto it = conn[node].begin(); it != conn[node].end(); it++)
+		if(*it != par && siz[*it] > no_nodes/2)
+			return find_centr(*it, node);
+	return node;
+}
+
+void decompose(int node, int parent)
+{
+	no_nodes = 0;
+	find_size(node, node);
+	int centr = find_centr(node, node);
+	if(parent == -1)	parent = centr;
+	par[centr] = par;
+	for(auto it=conn[centr].begin(); it!=conn[centr].end(); it++)
+	{
+		conn[*it].erase(centr);
+		decompose(*it, centr);
+	}
+	conn[centr].clear();
+}
+
+void reset_dist()
+{
+	loop(i, 1, n+1)
+	{
+		w_dist[i].insert(inf_val);
+	}
+}
+ //------------------- Question Specific ----------------------------//
+
+vector<ll> C_dist[int_max+1];
+
+void set_dist(int node, int curr)
+{
+	C_dist[curr].pb(dist(node, curr);
+	if(par[curr] != curr)
+		set_dist(node, par[curr]);
+}
+
+void sort_dist(int node)
+{
+	sort(C_dis[node].rbegin(), C_dis[node].rend());
+}
+
+int str_val[max_n+1];
+
+void find_val(int node, int curr)
+{
+	int f_v = C_dist[curr][0];
+	int s_v = 0;
+	if(C_dist[curr].size() > 1)
+		s_v = C_dist[curr][1];
+	int d = dist(node, curr);
+	if(d != f_v)
+	{
+		str_val[node] = max(str_val[node], d+f_v);
+	}
+	else
+	{
+		str_val[node] = max(str_val[node], d+s_v);
+	}
+	if(par[curr] != curr)
+		find_val(node, par[curr]);
+}
+
+ll ans[max_n+1];
+int visit[max_n+1];
+void dfs_ans(int root)
+{
+	int c_ans = str_val[root];
+	visit[root] = 1;
+	for(auto it = conn[root].begin(); it != conn[root].end(); it++)
+	{
+		if(!visit[*it])
+		{
+			dfs_ans(*it);
+			c_ans = min(c_ans, ans[*it]);
+		}
+	}
+	ans[root] = c_ans;
+}
+int main()
+{
+ //--------------------------------------------------------------//
+//----------------------- Input --------------------------------//
+    int T;  cin >> T;
+    for(int t = 0; t < T; t++)
+    {
+        sf("%lld", &n);
+        loop(i, 0, n-1)
+        {
+            int a, b, w;
+            sf("%d%d%d", &a, &b, &w);
+            conn[a].insert(b);
+            conn[b].insert(a);
+            distan[a][b] = w;
+            distan[b][a] = w;
+        }
+        pre_process();
+        decompose(1, 0);
+        for(int i = 1; i <= n; i++)
+        	set_dist(i, i);
+        for(int i = 1; i <= n; i++)
+        	sort_dist(i);
+        for(int i = 1; i <= n; i++)
+        	find_val(i, i);
+        
+    }
+	return 0;
+}

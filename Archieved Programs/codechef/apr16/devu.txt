@@ -1,0 +1,21 @@
+CodeChef April Challenge 2016
+
+Problem : Devu and good strings (DEVGOSTR)
+
+Constraints : 	T 	<= 	50
+		A 	<= 	3
+	       |s| 	<=	50
+		K	<=	|s|
+
+Observations :
+
+-> 50 test cases, ie max instr per test case ~ 2*(10^6)
+-> Total Permutations possible = (3^50) ~ (10^23) Not feasible
+-> for a non-good string, the following property will hold :-
+	- No three consecutive characters in the string are same
+	- No three alternating characters in the string are same
+	- Basically, there shouldn't be a specific gap, such that the same chara 		repeats after every gap more than 1ce
+
+-> Simpler form of problem : How many good strings are there for length n, 3 char
+
+	->
