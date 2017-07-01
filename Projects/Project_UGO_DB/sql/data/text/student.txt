@@ -1,0 +1,149 @@
+
+ roll_no           name                                batch 
+
+ AM.EN.H4CSE14002  Krithic P                           A     
+ AM.EN.H4CSE14003  Priyanshu Das                       A     
+ AM.EN.H4CSE14004  Sandeep Satheesh                    A     
+ AM.EN.H4CSE14005  Balachander Srijith                 A     
+ AM.EN.U4CSE12044  Subramonian R I                     B     
+ AM.EN.U4CSE12123  Konda Abhijith Reddy                B     
+ AM.EN.U4CSE12128  Nandakumar G K                      B     
+ AM.EN.U4CSE12503  Vishnu V                            A     
+ AM.EN.U4CSE13134  Madhu V M                           B     
+ AM.EN.U4CSE13148  Ranga Tarun Kumar                   A     
+ AM.EN.U4CSE14001  Atla Sowmya Reddy                   A     
+ AM.EN.U4CSE14003  Adarsh S                            A     
+ AM.EN.U4CSE14004  Aiswarya S                          A     
+ AM.EN.U4CSE14005  Akhil R                             A     
+ AM.EN.U4CSE14006  Akshay C V                          A     
+ AM.EN.U4CSE14007  Amrita Raghunath                    A     
+ AM.EN.U4CSE14008  Anagha R                            A     
+ AM.EN.U4CSE14009  Anand Sasikumar                     A     
+ AM.EN.U4CSE14010  Anumala Mrudula                     A     
+ AM.EN.U4CSE14011  Aparnna C G                         A     
+ AM.EN.U4CSE14012  Arjun P                             A     
+ AM.EN.U4CSE14014  Athira Sajimon Nair                 A     
+ AM.EN.U4CSE14015  Belede Rahul                        A     
+ AM.EN.U4CSE14017  Bommisetty Amar Rahul               A     
+ AM.EN.U4CSE14018  Challa Manish Reddy                 A     
+ AM.EN.U4CSE14019  Chirath R                           A     
+ AM.EN.U4CSE14020  Devi Priya Madhusoodanan            A     
+ AM.EN.U4CSE14021  Divya S Thankachy                   A     
+ AM.EN.U4CSE14022  Emmanuel C Baby                     A     
+ AM.EN.U4CSE14023  Gelle Tripura                       A     
+ AM.EN.U4CSE14024  Gayathri P Menakath                 A     
+ AM.EN.U4CSE14025  Gokul M S                           A     
+ AM.EN.U4CSE14028  H Chaithanya                        A     
+ AM.EN.U4CSE14029  Harigovind Thoyakkat                A     
+ AM.EN.U4CSE14030  Haritha H                           A     
+ AM.EN.U4CSE14031  Heeraj                              A     
+ AM.EN.U4CSE14032  Indhu C                             A     
+ AM.EN.U4CSE14033  Jaliparthi Surya Prakash            A     
+ AM.EN.U4CSE14034  K V S P Sai Sravya                  A     
+ AM.EN.U4CSE14035  Kandru Yateesh                      A     
+ AM.EN.U4CSE14036  Karthik Rajan                       A     
+ AM.EN.U4CSE14037  Kona Sravan Kumar Reddy             A     
+ AM.EN.U4CSE14038  Kripa S Kumar                       A     
+ AM.EN.U4CSE14040  Kurapati Tharun                     A     
+ AM.EN.U4CSE14041  Kusu Manikanta Venkata Sai          A     
+ AM.EN.U4CSE14042  Lakshmi P S                         A     
+ AM.EN.U4CSE14043  Sai Hari Chandan Morapakala         A     
+ AM.EN.U4CSE14044  Mahendra Reddy Chagam               A     
+ AM.EN.U4CSE14045  Mandapati Saikrishnareddy           A     
+ AM.EN.U4CSE14047  Miryabelli Avinash                  A     
+ AM.EN.U4CSE14048  Mudunuri Phani Sanjay Varma         A     
+ AM.EN.U4CSE14049  Nandakishor Prabhu R                A     
+ AM.EN.U4CSE14051  Pagidimarry Showrya                 A     
+ AM.EN.U4CSE14052  Panthati Jagadeesh                  A     
+ AM.EN.U4CSE14053  Petla Manikanta Sai Kumar           A     
+ AM.EN.U4CSE14056  Ramgopal S                          A     
+ AM.EN.U4CSE14057  Ramya Ramesh                        A     
+ AM.EN.U4CSE14058  S Sudarsan                          A     
+ AM.EN.U4CSE14059  Sai Kaushik                         A     
+ AM.EN.U4CSE14061  Sarang Sanal                        A     
+ AM.EN.U4CSE14062  Shiv Krishna A                      A     
+ AM.EN.U4CSE14063  Sidharth N                          A     
+ AM.EN.U4CSE14064  Seemakurthi Bhargava Nikhil         A     
+ AM.EN.U4CSE14065  Sri Nikitha K                       A     
+ AM.EN.U4CSE14066  Sruthi Menon V K                    A     
+ AM.EN.U4CSE14067  Subham Kumar Gupta                  A     
+ AM.EN.U4CSE14068  Surapaneni Sri Sai Tarun            A     
+ AM.EN.U4CSE14069  Suryarjuna Gopakumar                A     
+ AM.EN.U4CSE14071  Vaddireddy Sai Charith Reddy        A     
+ AM.EN.U4CSE14072  Varnajyosula Venkata Audisesha      A     
+ AM.EN.U4CSE14073  Vindula Sai Yashwanth               A     
+ AM.EN.U4CSE14075  Yelamakuri Lokesh Reddy             A     
+ AM.EN.U4CSE14076  Anjali Unnikrishnan                 A     
+ AM.EN.U4CSE14077  Resya Reghu                         A     
+ AM.EN.U4CSE14101  Ayyagari Swathvik Reddy             B     
+ AM.EN.U4CSE14102  Adarsh K                            B     
+ AM.EN.U4CSE14103  Adithya K Moorthy                   B     
+ AM.EN.U4CSE14104  Ajay Menon                          B     
+ AM.EN.U4CSE14105  Akhil Sudheer                       B     
+ AM.EN.U4CSE14106  Akshay Krishna M P                  B     
+ AM.EN.U4CSE14107  Amrita Sanjay                       B     
+ AM.EN.U4CSE14109  Anand Sukumar J V                   B     
+ AM.EN.U4CSE14110  Anupam T G                          B     
+ AM.EN.U4CSE14111  Aravind R B                         B     
+ AM.EN.U4CSE14112  Arun Babu                           B     
+ AM.EN.U4CSE14113  Athira S                            B     
+ AM.EN.U4CSE14114  Athul Krishna                       B     
+ AM.EN.U4CSE14116  Bhavanam Venkata Subba Rami         B     
+ AM.EN.U4CSE14117  Chilukuri Shanmuka Saisaran         B     
+ AM.EN.U4CSE14118  Chethan Dev                         B     
+ AM.EN.U4CSE14119  D Anirudh                           B     
+ AM.EN.U4CSE14120  Devi R Krishnan                     B     
+ AM.EN.U4CSE14121  E G Nidheep                         B     
+ AM.EN.U4CSE14124  Gokul Krishna P                     B     
+ AM.EN.U4CSE14125  Gokulakrishnan S R                  B     
+ AM.EN.U4CSE14126  Goutham S                           B     
+ AM.EN.U4CSE14127  Gumduboina Seshu Babu               B     
+ AM.EN.U4CSE14128  H Vinayak Nair                      B     
+ AM.EN.U4CSE14129  Harikrishna K J                     B     
+ AM.EN.U4CSE14131  Indeevar Madapakula                 B     
+ AM.EN.U4CSE14132  Inumella Chaitanya                  B     
+ AM.EN.U4CSE14133  Jayakrishna Menon V                 B     
+ AM.EN.U4CSE14134  Kandimalla Vishnuvardhan            B     
+ AM.EN.U4CSE14135  Karicharla Srinidhi                 B     
+ AM.EN.U4CSE14137  Kondapi Chandrika                   B     
+ AM.EN.U4CSE14138  Krishnavajjala Krishna Samhitha     B     
+ AM.EN.U4CSE14139  Kuppili Venkata Sai Harsha Vardhan  B     
+ AM.EN.U4CSE14140  Kurup Abhishek Suresh               B     
+ AM.EN.U4CSE14141  Lakshmi Niveditha Govindu           B     
+ AM.EN.U4CSE14142  Lolla Sravani                       B     
+ AM.EN.U4CSE14143  Maddula Pavan Kumar Reddy           B     
+ AM.EN.U4CSE14144  Malavika Vinod                      B     
+ AM.EN.U4CSE14145  Manduva Vinay Chowdary              B     
+ AM.EN.U4CSE14146  Meghna Raj                          B     
+ AM.EN.U4CSE14147  Movva Supriya                       B     
+ AM.EN.U4CSE14148  Mullapudi Aseesh                    B     
+ AM.EN.U4CSE14149  Neetish M M                         B     
+ AM.EN.U4CSE14150  P Avinash                           B     
+ AM.EN.U4CSE14151  Pallavi M                           B     
+ AM.EN.U4CSE14152  Panuganti Shashank                  B     
+ AM.EN.U4CSE14153  Pranav I                            B     
+ AM.EN.U4CSE14154  Prata Surya Pavan Saketh            B     
+ AM.EN.U4CSE14155  Puttagunta Srirupa                  B     
+ AM.EN.U4CSE14156  Ramineni Manideep                   B     
+ AM.EN.U4CSE14157  S Sidharth Shankar                  B     
+ AM.EN.U4CSE14158  Sadhu Sai Kaushal                   B     
+ AM.EN.U4CSE14159  Sai Sampath Vadapalli               B     
+ AM.EN.U4CSE14160  Sannidhi Satya Venkata Krishna      B     
+ AM.EN.U4CSE14161  Saurav Vinod                        B     
+ AM.EN.U4CSE14162  Sidharth M                          B     
+ AM.EN.U4CSE14163  Sreelakshmi Ajith                   B     
+ AM.EN.U4CSE14164  Sreerag Venugopal                   B     
+ AM.EN.U4CSE14165  Sriram S                            B     
+ AM.EN.U4CSE14166  Sruthy Murali                       B     
+ AM.EN.U4CSE14167  Sura Lakshmana Rao                  B     
+ AM.EN.U4CSE14168  Surapuram Akhil                     B     
+ AM.EN.U4CSE14169  Tatikonda Shanmukha Sai Praneeth    B     
+ AM.EN.U4CSE14170  Udit S Joshi                        B     
+ AM.EN.U4CSE14171  Vaisakh M S                         B     
+ AM.EN.U4CSE14172  Velagapudi Venkatesh                B     
+ AM.EN.U4CSE14174  Yashwanth Veluri                    B     
+ AM.EN.U4CSE14501  Gayathri C Ajayan                   A     
+ AM.EN.U4CSE14502  Bethu Vara Lakshmi                  B     
+ AM.EN.U4CSE14503  Neha Naramsetty                     A     
+ AM.EN.U4CSE14504  Yarasani Sriharsha Reddy            A     
+ AM.EN.U4CSE14505  Ashwanth Unni                       B     
