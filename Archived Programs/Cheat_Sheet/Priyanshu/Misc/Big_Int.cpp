@@ -5,33 +5,42 @@
 #include <iomanip>
 #include <string>
 #include <ctime>
+
+#define sf scanf
+#define pf printf
+#define ll long long int
+#define pb push_back
+#define mp make_pair
+#define ins insert
+#define max_N 10001
+
 using namespace std;
- 
+
 // base and base_digits must be consistent
 const int base = 1000000000;
 const int base_digits = 9;
- 
+
 struct bigint {
     vector<int> a;
     int sign;
- 
+
     bigint() :
         sign(1) {
     }
- 
+
     bigint(long long v) {
         *this = v;
     }
- 
+
     bigint(const string &s) {
         read(s);
     }
- 
+
     void operator=(const bigint &v) {
         sign = v.sign;
         a = v.a;
     }
- 
+
     void operator=(long long v) {
         sign = 1;
         if (v < 0)
@@ -39,11 +48,11 @@ struct bigint {
         for (; v > 0; v = v / base)
             a.push_back(v % base);
     }
- 
+
     bigint operator+(const bigint &v) const {
         if (sign == v.sign) {
             bigint res = v;
- 
+
             for (int i = 0, carry = 0; i < (int) max(a.size(), v.a.size()) || carry; ++i) {
                 if (i == (int) res.a.size())
                     res.a.push_back(0);
@@ -56,7 +65,7 @@ struct bigint {
         }
         return *this - (-v);
     }
- 
+
     bigint operator-(const bigint &v) const {
         if (sign == v.sign) {
             if (abs() >= v.abs()) {
@@ -74,7 +83,7 @@ struct bigint {
         }
         return *this + (-v);
     }
- 
+
     void operator*=(int v) {
         if (v < 0)
             sign = -sign, v = -v;
@@ -88,20 +97,20 @@ struct bigint {
         }
         trim();
     }
- 
+
     bigint operator*(int v) const {
         bigint res = *this;
         res *= v;
         return res;
     }
- 
+
     friend pair<bigint, bigint> divmod(const bigint &a1, const bigint &b1) {
         int norm = base / (b1.a.back() + 1);
         bigint a = a1.abs() * norm;
         bigint b = b1.abs() * norm;
         bigint q, r;
         q.a.resize(a.a.size());
- 
+
         for (int i = a.a.size() - 1; i >= 0; i--) {
             r *= base;
             r += a.a[i];
@@ -113,22 +122,22 @@ struct bigint {
                 r += b, --d;
             q.a[i] = d;
         }
- 
+
         q.sign = a1.sign * b1.sign;
         r.sign = a1.sign;
         q.trim();
         r.trim();
         return make_pair(q, r / norm);
     }
- 
+
     bigint operator/(const bigint &v) const {
         return divmod(*this, v).first;
     }
- 
+
     bigint operator%(const bigint &v) const {
         return divmod(*this, v).second;
     }
- 
+
     void operator/=(int v) {
         if (v < 0)
             sign = -sign, v = -v;
@@ -139,13 +148,13 @@ struct bigint {
         }
         trim();
     }
- 
+
     bigint operator/(int v) const {
         bigint res = *this;
         res /= v;
         return res;
     }
- 
+
     int operator%(int v) const {
         if (v < 0)
             v = -v;
@@ -154,7 +163,7 @@ struct bigint {
             m = (a[i] + m * (long long) base) % v;
         return m * sign;
     }
- 
+
     void operator+=(const bigint &v) {
         *this = *this + v;
     }
@@ -167,7 +176,7 @@ struct bigint {
     void operator/=(const bigint &v) {
         *this = *this / v;
     }
- 
+
     bool operator<(const bigint &v) const {
         if (sign != v.sign)
             return sign < v.sign;
@@ -178,7 +187,7 @@ struct bigint {
                 return a[i] * sign < v.a[i] * sign;
         return false;
     }
- 
+
     bool operator>(const bigint &v) const {
         return v < *this;
     }
@@ -194,44 +203,44 @@ struct bigint {
     bool operator!=(const bigint &v) const {
         return *this < v || v < *this;
     }
- 
+
     void trim() {
         while (!a.empty() && !a.back())
             a.pop_back();
         if (a.empty())
             sign = 1;
     }
- 
+
     bool isZero() const {
         return a.empty() || (a.size() == 1 && !a[0]);
     }
- 
+
     bigint operator-() const {
         bigint res = *this;
         res.sign = -sign;
         return res;
     }
- 
+
     bigint abs() const {
         bigint res = *this;
         res.sign *= res.sign;
         return res;
     }
- 
+
     long long longValue() const {
         long long res = 0;
         for (int i = a.size() - 1; i >= 0; i--)
             res = res * base + a[i];
         return res * sign;
     }
- 
+
     friend bigint gcd(const bigint &a, const bigint &b) {
         return b.isZero() ? a : gcd(b, a % b);
     }
     friend bigint lcm(const bigint &a, const bigint &b) {
         return a / gcd(a, b) * b;
     }
- 
+
     void read(const string &s) {
         sign = 1;
         a.clear();
@@ -249,14 +258,14 @@ struct bigint {
         }
         trim();
     }
- 
+
     friend istream& operator>>(istream &stream, bigint &v) {
         string s;
         stream >> s;
         v.read(s);
         return stream;
     }
- 
+
     friend ostream& operator<<(ostream &stream, const bigint &v) {
         if (v.sign == -1)
             stream << '-';
@@ -265,7 +274,7 @@ struct bigint {
             stream << setw(base_digits) << setfill('0') << v.a[i];
         return stream;
     }
- 
+
     static vector<int> convert_base(const vector<int> &a, int old_digits, int new_digits) {
         vector<long long> p(max(old_digits, new_digits) + 1);
         p[0] = 1;
@@ -288,9 +297,9 @@ struct bigint {
             res.pop_back();
         return res;
     }
- 
+
     typedef vector<long long> vll;
- 
+
     static vll karatsubaMultiply(const vll &a, const vll &b) {
         int n = a.size();
         vll res(n + n);
@@ -300,27 +309,27 @@ struct bigint {
                     res[i + j] += a[i] * b[j];
             return res;
         }
- 
+
         int k = n >> 1;
         vll a1(a.begin(), a.begin() + k);
         vll a2(a.begin() + k, a.end());
         vll b1(b.begin(), b.begin() + k);
         vll b2(b.begin() + k, b.end());
- 
+
         vll a1b1 = karatsubaMultiply(a1, b1);
         vll a2b2 = karatsubaMultiply(a2, b2);
- 
+
         for (int i = 0; i < k; i++)
             a2[i] += a1[i];
         for (int i = 0; i < k; i++)
             b2[i] += b1[i];
- 
+
         vll r = karatsubaMultiply(a2, b2);
         for (int i = 0; i < (int) a1b1.size(); i++)
             r[i] -= a1b1[i];
         for (int i = 0; i < (int) a2b2.size(); i++)
             r[i] -= a2b2[i];
- 
+
         for (int i = 0; i < (int) r.size(); i++)
             res[i + k] += r[i];
         for (int i = 0; i < (int) a1b1.size(); i++)
@@ -329,7 +338,7 @@ struct bigint {
             res[i + n] += a2b2[i];
         return res;
     }
- 
+
     bigint operator*(const bigint &v) const {
         vector<int> a6 = convert_base(this->a, base_digits, 6);
         vector<int> b6 = convert_base(v.a, base_digits, 6);
@@ -354,22 +363,20 @@ struct bigint {
         return res;
     }
 };
- 
-int main() {
-    bigint a("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999");
-    bigint b("19999999999999999999999999999999999999999999999999999999999999999999999999999999999999998");
-    cout << a * b << endl;
-    cout << a / b << endl;
- 
-    string sa, sb;
-    for (int i = 0; i < 100000; i++)
-        sa += i % 10 + '0';
-    for (int i = 0; i < 20000; i++)
-        sb += i % 10 + '0';
-    a = bigint(sa);
-    b = bigint(sb);
- 
-    clock_t start = clock();
-    bigint c = a / b;
-    fprintf(stderr,"time=%.3lfsec\n", 0.000001*(clock() - start));
+
+bigint pow(bigint n, bigint x)
+{
+    if(x == 0)
+        return bigint("1");
+    if(x%2 == 0)
+    {
+        bigint t = pow(n, x/2);
+        return t*t;
+    }
+    return pow(n, x-1)*n;
+}
+
+int main()
+{
+    return 0;
 }

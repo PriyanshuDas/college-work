@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//********** Careful when mod > 10^9, Might Overflow*************
 ll expon(ll num, ll p, ll mod)	//(num, pow, mod)
 {
 	ll pow_arr[64];

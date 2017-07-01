@@ -4,7 +4,7 @@
 (2) Prime Factorisation (No powers)
 
 	Written by Priyanshu Das	*/
-	
+
 #include <bits/stdc++.h>
 
 #define ll long long int
@@ -12,7 +12,7 @@
 #define mp make_pair
 #define pf printf
 #define sf scanf
-#define limit 10000000
+#define limit 1000000
 
 using namespace std;
 
@@ -23,26 +23,28 @@ vector<int> Factors[limit];
 
 int main()
 {
+    not_prime[0] = 1;
+    not_prime[1] = 1;
 	for(int i = 2; i < limit; i++)			// 1 is not considered for prime factorization!
 	{
 		if(!not_prime[i])
 		{
 			primes.pb(i);
-			for(int j = i; j < limit; j+= i)	//Every time a prime is found, no of ops = limit/(prime), approx n*(logn)(logn)
+			for(ll j = i*i; j < limit && j > 0; j+= i)	//Every time a prime is found, no of ops = limit/(prime), approx n*(logn)(logn)
 			{
 				Factors[j].pb(i);
 				not_prime[j] = 1;
 			}
 		}
 	}
-	
+
 	cout << "List of Primes :\n";
 	for(int i = 0; primes[i] < 300; i++)
 	{
 		cout << primes[i]<< " ";
 	}
 	cout << endl;
-	
+
 	/*for(int i = 2; i < limit; i++)
 	{
 		pf("Prime Factors for %d : \n", i);

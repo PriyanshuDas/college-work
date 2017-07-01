@@ -1,0 +1,4 @@
+Problems that I wasn't able to solve
+
+- Matrix Inversions (HackerRank Morgan Stanley)		(BIT)				(Krit)
+- Pair Selection	(HackerRank Morgan Stanley)		(Bipartite Graph)	(Priy)

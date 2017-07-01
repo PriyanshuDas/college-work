@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+
+#define sf scanf
+#define pf printf
+#define ll long long int
+#define mp make_pair
+#define pb push_back
+#define ins insert
+#define pii pair<int, int>
+#define pi3 pair<int, pair<int, int> >
+#define loop(i, l, r) for(int i = l; i < r; i++)
+
+using namespace std;
